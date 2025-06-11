@@ -3,7 +3,8 @@ name: Deploy React App to GitHub Pages
 on:
   push:
     branches:
-      - main
+      - main        # 🔁 Auto trigger on push to main
+  workflow_dispatch: # 👇 Manual trigger button in GitHub UI
 
 jobs:
   build-and-deploy:

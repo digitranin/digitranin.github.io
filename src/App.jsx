@@ -804,7 +804,7 @@ const handleContactSubmit = (e) => {
             </div>
             <div>
               <h3 className="font-semibold text-lg">Call Us</h3>
-              <p className="text-purple-200">+1 (612) 445-0260 </p>
+              <p className="text-purple-200">+1 (623) 212-6015</p>
             </div>
           </div>
         </div>
@@ -854,7 +854,7 @@ const handleContactSubmit = (e) => {
             </div>
             <div className="mt-2 flex items-center gap-2 text-purple-200">
               <FaPhone className="text-purple-200" />
-              <span>+1 623 212 6015</span>
+              <span>+1 (623) 212-6015</span>
             </div>
           </div>
         </div>

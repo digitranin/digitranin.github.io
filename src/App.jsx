@@ -478,17 +478,21 @@ const handleContactSubmit = (e) => {
               </div>
               <div className="flex items-center gap-8 pt-4">
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-blue-300">20+</div>
-                  <div className="text-sm text-blue-200">Projects</div>
-                </div>
-                <div className="text-center">
                   <div className="text-3xl font-bold text-purple-300">5+</div>
                   <div className="text-sm text-purple-200">Years</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-pink-300">10+</div>
+                  <div className="text-3xl font-bold text-pink-300">21+</div>
                   <div className="text-sm text-pink-200">Clients</div>
                 </div>
+                  <div className="text-center">
+                  <div className="text-3xl font-bold text-blue-300">36+</div>
+                  <div className="text-sm text-blue-200">Projects</div>
+                </div>
+                    <div className="text-center">
+                    <div className="text-3xl font-bold text-orange-400">$400,000+</div>
+                    <div className="text-sm text-white-600">Cost Savings</div>
+                  </div>
               </div>
             </div>
             <div className="flex-1 flex justify-center">
@@ -722,7 +726,7 @@ const handleContactSubmit = (e) => {
                   We are a passionate team of developers, designers, and innovators dedicated to transforming businesses through cutting-edge technology solutions.
                 </p>
                 <p className="text-gray-600 leading-relaxed">
-                  With over 5 years of experience and 20+ successful projects, we've helped companies across various industries achieve their digital transformation goals. Our expertise spans from AI/ML solutions to modern web and mobile applications.
+                  With over 5 years of experience and 36+ successful projects, we've helped companies across various industries achieve their digital transformation goals. Our expertise spans from AI/ML solutions to modern web and mobile applications.
                 </p>
                 <div className="grid grid-cols-2 gap-6 pt-6">
                   <div className="text-center p-4 bg-blue-50 rounded-xl">
@@ -730,16 +734,16 @@ const handleContactSubmit = (e) => {
                     <div className="text-sm text-gray-600">Years Experience</div>
                   </div>
                   <div className="text-center p-4 bg-purple-50 rounded-xl">
-                    <div className="text-3xl font-bold text-purple-600 mb-2">20+</div>
+                    <div className="text-3xl font-bold text-purple-600 mb-2">36+</div>
                     <div className="text-sm text-gray-600">Projects Delivered</div>
                   </div>
                   <div className="text-center p-4 bg-green-50 rounded-xl">
-                    <div className="text-3xl font-bold text-green-600 mb-2">10+</div>
+                    <div className="text-3xl font-bold text-green-600 mb-2">21+</div>
                     <div className="text-sm text-gray-600">Happy Clients</div>
                   </div>
                   <div className="text-center p-4 bg-orange-50 rounded-xl">
-                    <div className="text-3xl font-bold text-orange-600 mb-2">6+</div>
-                    <div className="text-sm text-gray-600">Industries Served</div>
+                    <div className="text-3xl font-bold text-orange-600 mb-2">$400,000+</div>
+                    <div className="text-sm text-gray-600">Cost Savings</div>
                   </div>
                 </div>
               </div>
@@ -979,3 +983,4 @@ const handleContactSubmit = (e) => {
     </div>
   );
 }
+

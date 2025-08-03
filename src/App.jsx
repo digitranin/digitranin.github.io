@@ -476,23 +476,23 @@ const handleContactSubmit = (e) => {
                   <span>View Our Work</span>
                 </a>
               </div>
-              <div className="flex items-center gap-8 pt-4">
-                <div className="text-center">
+              <div className="flex flex-wrap pt-4 gap-8 sm:gap-0 items-center text-center sm:items-start sm:text-left">
+                <div className="w-32">
                   <div className="text-3xl font-bold text-purple-300">5+</div>
                   <div className="text-sm text-purple-200">Years</div>
                 </div>
-                <div className="text-center">
+                <div className="w-32">
                   <div className="text-3xl font-bold text-pink-300">21+</div>
                   <div className="text-sm text-pink-200">Clients</div>
                 </div>
-                  <div className="text-center">
+                <div className="w-32">
                   <div className="text-3xl font-bold text-blue-300">36+</div>
                   <div className="text-sm text-blue-200">Projects</div>
                 </div>
-                    <div className="text-center">
-                    <div className="text-3xl font-bold text-orange-400">$400,000+</div>
-                    <div className="text-sm text-white-600">Cost Savings</div>
-                  </div>
+                <div className="w-32">
+                  <div className="text-3xl font-bold text-orange-400">$400,000+</div>
+                  <div className="text-sm text-white">Cost Savings</div>
+                </div>
               </div>
             </div>
             <div className="flex-1 flex justify-center">
@@ -983,4 +983,5 @@ const handleContactSubmit = (e) => {
     </div>
   );
 }
+
 

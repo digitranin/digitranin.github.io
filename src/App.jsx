@@ -801,16 +801,7 @@ const handleContactSubmit = (e) => {
               <h3 className="font-semibold text-lg">Email Us</h3>
               <p className="text-blue-200">info@digitranin.com</p>
             </div>
-          </div>
-          <div className="flex items-center gap-4">
-            <div className="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center">
-              <FaPhone className="text-white" />
-            </div>
-            <div>
-              <h3 className="font-semibold text-lg">Call Us</h3>
-              <p className="text-purple-200">+1 (623) 212-6015</p>
-            </div>
-          </div>
+          </div>          
         </div>
         {/* Socials */}
         <div className="pt-8">
@@ -855,10 +846,6 @@ const handleContactSubmit = (e) => {
             <div className="mt-2 flex items-center gap-2 text-blue-200">
               <FaEnvelope className="text-blue-200" />
               <a href="mailto:sales@digitranin.com" className="underline">sales@digitranin.com</a>
-            </div>
-            <div className="mt-2 flex items-center gap-2 text-purple-200">
-              <FaPhone className="text-purple-200" />
-              <span>+1 (623) 212-6015</span>
             </div>
           </div>
         </div>
@@ -973,7 +960,7 @@ const handleContactSubmit = (e) => {
               </div>
             </div>
             <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-              <p>&copy; 2025 DigiTran Technologies. All rights reserved. Built with ❤️ by DigiTran Team.</p>
+              <p>&copy; 2026 DigiTran Technologies. All rights reserved. Built with ❤️ by DigiTran Team.</p>
             </div>
           </div>
         </footer>
@@ -983,5 +970,6 @@ const handleContactSubmit = (e) => {
     </div>
   );
 }
+
 
 

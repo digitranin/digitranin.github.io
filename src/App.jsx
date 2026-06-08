@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import {
   FaLinkedin,
   FaGithub,
@@ -306,7 +307,7 @@ export default function EnhancedDigiTranApp() {
     { label: "Services", href: "#services", section: "services" },
     { label: "Work", href: "#work", section: "work" },
     { label: "About", href: "#about", section: "about" },
-      ];
+  ];
 
   // Enhanced scroll spy
   useEffect(() => {
@@ -324,13 +325,19 @@ export default function EnhancedDigiTranApp() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Scroll to section helper
+  const scrollTo = (id) => {
+    setSidebarOpen(false);
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  };
+
   // Contact form handler
-const handleContactSubmit = (e) => {
-  e.preventDefault();
-  setShowThank(true);
-  e.target.reset();
-  setTimeout(() => setShowThank(false), 2000);
-};
+  const handleContactSubmit = (e) => {
+    e.preventDefault();
+    setShowThank(true);
+    e.target.reset();
+    setTimeout(() => setShowThank(false), 2000);
+  };
 
   if (isLoading) {
     return (
@@ -358,17 +365,17 @@ const handleContactSubmit = (e) => {
       {/* Enhanced Navbar with glassmorphism */}
       <nav className="w-full bg-white shadow-lg fixed top-0 left-0 z-40 border-b border-white/20">
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-20 relative">
-          <a href="#home" className="flex items-center gap-2 group">
+          <button onClick={() => scrollTo('home')} className="flex items-center gap-2 group">
             <Logo />
             <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent tracking-tight select-none group-hover:scale-105 transition-transform">
               DigiTran Technologies
             </span>
-          </a>
-          <div className="hidden md:flex gap-8">
+          </button>
+          <div className="hidden md:flex gap-8 items-center">
             {navLinks.map(link => (
-              <a
-                href={link.href}
+              <button
                 key={link.label}
+                onClick={() => scrollTo(link.section)}
                 className={`py-2 px-4 transition-all duration-300 rounded-lg relative overflow-hidden group ${
                   activeSection === link.section
                     ? "text-blue-700 font-bold bg-blue-50"
@@ -377,15 +384,21 @@ const handleContactSubmit = (e) => {
               >
                 <span className="relative z-10">{link.label}</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left opacity-10"></div>
-              </a>
+              </button>
             ))}
+            <Link
+              to="/studio7"
+              className="py-2 px-4 transition-all duration-300 rounded-lg font-semibold text-orange-700 bg-orange-50 hover:bg-orange-100 border border-orange-200 flex items-center gap-1.5"
+            >
+              Studio7
+            </Link>
           </div>
-          <a
-            href="#contact"
+          <button
+            onClick={() => scrollTo('contact')}
             className="hidden md:inline-flex bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-lg font-bold ml-4 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
           >
             Let's Talk
-          </a>
+          </button>
           <button
             className="md:hidden flex items-center p-3 hover:bg-gray-100 rounded-lg transition-colors"
             onClick={() => setSidebarOpen(true)}
@@ -416,27 +429,32 @@ const handleContactSubmit = (e) => {
                   </button>
                 </div>
                 {navLinks.map((link, index) => (
-                  <a
+                  <button
                     key={link.label}
-                    href={link.href}
-                    className={`block text-lg py-3 px-4 mb-2 rounded-lg transition-all duration-300 ${
+                    onClick={() => scrollTo(link.section)}
+                    className={`block w-full text-left text-lg py-3 px-4 mb-2 rounded-lg transition-all duration-300 ${
                       activeSection === link.section
                         ? "text-blue-700 font-bold bg-blue-50"
                         : "text-gray-700 hover:text-blue-700 hover:bg-blue-50"
                     }`}
-                    onClick={() => setSidebarOpen(false)}
                     style={{ animationDelay: `${index * 100}ms` }}
                   >
                     {link.label}
-                  </a>
+                  </button>
                 ))}
-                <a
-                  href="#contact"
-                  className="mt-6 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg px-6 py-3 font-bold shadow-lg hover:shadow-xl transition-all duration-300 text-center"
+                <Link
+                  to="/studio7"
+                  className="block text-lg py-3 px-4 mb-2 rounded-lg text-orange-700 font-semibold bg-orange-50 hover:bg-orange-100 transition-all duration-300"
                   onClick={() => setSidebarOpen(false)}
                 >
+                  Studio7
+                </Link>
+                <button
+                  onClick={() => scrollTo('contact')}
+                  className="mt-6 w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg px-6 py-3 font-bold shadow-lg hover:shadow-xl transition-all duration-300 text-center"
+                >
                   Let's Talk
-                </a>
+                </button>
               </div>
             </>
           )}
@@ -461,20 +479,20 @@ const handleContactSubmit = (e) => {
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-4">
-                <a 
-                  href="#contact" 
+                <button
+                  onClick={() => scrollTo('contact')}
                   className="inline-flex items-center gap-2 bg-white text-blue-900 font-bold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group"
                 >
                   <span>Start Your Project</span>
                   <FaRocket className="group-hover:translate-x-1 transition-transform" />
-                </a>
-                <a 
-                  href="#work" 
+                </button>
+                <button
+                  onClick={() => scrollTo('work')}
                   className="inline-flex items-center gap-2 border-2 border-white text-white font-bold px-8 py-4 rounded-xl hover:bg-white hover:text-blue-900 transition-all duration-300 group"
                 >
                   <FaPlay className="group-hover:translate-x-1 transition-transform" />
                   <span>View Our Work</span>
-                </a>
+                </button>
               </div>
               <div className="flex flex-wrap pt-4 gap-8 sm:gap-0 items-center text-center sm:items-start sm:text-left">
                 <div className="w-32">
@@ -726,8 +744,19 @@ const handleContactSubmit = (e) => {
                   We are a passionate team of developers, designers, and innovators dedicated to transforming businesses through cutting-edge technology solutions.
                 </p>
                 <p className="text-gray-600 leading-relaxed">
-                  With over 5 years of experience and 36+ successful projects, we've helped companies across various industries achieve their digital transformation goals. Our expertise spans from AI/ML solutions to modern web and mobile applications.
+                  With over 5 years of experience and 36+ successful projects, we've helped companies across various industries achieve their digital transformation goals. Our expertise spans AI/ML solutions, custom software development, cloud technologies, and modern web and mobile applications.
                 </p>
+                <div className="bg-gradient-to-br from-purple-50 to-blue-50 border border-purple-100 rounded-xl p-5">
+                  <p className="text-gray-700 leading-relaxed text-sm">
+                    <Link
+                      to="/studio7"
+                      className="font-bold text-purple-700 hover:text-purple-900 underline decoration-purple-300 hover:decoration-purple-500 transition-colors"
+                    >
+                      Studio7
+                    </Link>{" "}
+                    is the publishing services division of DigiTran Technologies, providing end-to-end publishing solutions, including editorial support, design, typesetting, eBook production, accessibility compliance, and digital publishing services for publishers, authors, and educational institutions worldwide.
+                  </p>
+                </div>
                 <div className="grid grid-cols-2 gap-6 pt-6">
                   <div className="text-center p-4 bg-blue-50 rounded-xl">
                     <div className="text-3xl font-bold text-blue-600 mb-2">5+</div>
@@ -940,13 +969,16 @@ const handleContactSubmit = (e) => {
               <div>
                 <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
                 <ul className="space-y-2">
-                  {navLinks.filter(link => link.label !== "Let's Talk").map((link) => (
+                  {navLinks.map((link) => (
                     <li key={link.label}>
-                      <a href={link.href} className="text-gray-400 hover:text-white transition-colors">
+                      <button onClick={() => scrollTo(link.section)} className="text-gray-400 hover:text-white transition-colors">
                         {link.label}
-                      </a>
+                      </button>
                     </li>
                   ))}
+                  <li>
+                    <Link to="/studio7" className="text-orange-400 hover:text-orange-300 transition-colors font-medium">Studio7</Link>
+                  </li>
                 </ul>
               </div>
               <div>
@@ -960,7 +992,8 @@ const handleContactSubmit = (e) => {
               </div>
             </div>
             <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-              <p>&copy; 2026 DigiTran Technologies. All rights reserved. Built with ❤️ by DigiTran Team.</p>
+              <p className="mb-2">&copy; 2026 DigiTran Technologies. All rights reserved. Built with ❤️ by DigiTran Team.</p>
+              <p className="text-sm text-gray-500">Publishing services by{" "}<Link to="/studio7" className="text-orange-400 hover:text-orange-300 font-semibold transition-colors">Studio7 Digital Publishing</Link></p>
             </div>
           </div>
         </footer>

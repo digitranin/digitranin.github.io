@@ -1,5 +1,5 @@
 {
-  "name": "Digitran Technologies",
+  "name": "digitran-technologies",
   "version": "2.0.0",
   "private": true,
   "homepage": "https://digitranin.github.io/",
@@ -7,7 +7,8 @@
     "framer-motion": "^11.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-icons": "^5.0.1"
+    "react-icons": "^5.0.1",
+    "react-router-dom": "^7.17.0"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.5.2",

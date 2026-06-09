@@ -52,7 +52,7 @@ const services = [
   },
   {
     icon: <FaPencilAlt size={36} className="text-amber-500" />,
-    title: "Book Design & DTP",
+    title: "Book & Magazine Design",
     desc: "Precision-driven, elegant typesetting and layout for both print and digital formats.",
     features: ["Page Layout & Typesetting", "Cover Design", "Adobe InDesign Workflow"],
     color: "from-amber-500/20 to-amber-600/10",
@@ -205,20 +205,18 @@ export default function Studio7Page() {
           <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full" style={{ background: "radial-gradient(circle, rgba(20,184,166,0.10) 0%, transparent 70%)" }} />
           {/* Fine grid overlay */}
           <div className="absolute inset-0" style={{ backgroundImage: "linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px)", backgroundSize: "60px 60px" }} />
-          {/* Diagonal accent stripe */}
-          <div className="absolute top-0 right-1/3 w-px h-full" style={{ background: "linear-gradient(to bottom, transparent, rgba(245,158,11,0.3), transparent)" }} />
-          <div className="absolute top-0 right-1/3 translate-x-8 w-px h-full" style={{ background: "linear-gradient(to bottom, transparent, rgba(20,184,166,0.2), transparent)" }} />
+
         </div>
 
-        <div className="relative z-10 max-w-6xl mx-auto px-6 py-28 flex flex-col md:flex-row items-center gap-16">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 py-28 flex flex-col md:grid md:grid-cols-5 items-center gap-12 lg:gap-16">
           {/* Left: Text */}
-          <div className="flex-1 space-y-7 text-center md:text-left">
+          <div className="md:col-span-3 space-y-7 text-center md:text-left w-full">
             <div className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-semibold tracking-widest uppercase border" style={{ background: "rgba(245,158,11,0.12)", borderColor: "rgba(245,158,11,0.35)", color: "#fbbf24" }}>
               <FaBook size={10} />
               <span>A DigiTran Technologies Division</span>
             </div>
 
-            <h1 className="text-5xl md:text-6xl xl:text-7xl font-extrabold leading-[1.1] text-white">
+            <h1 className="text-4xl md:text-6xl xl:text-7xl font-extrabold leading-[1.1] text-white">
               Crafting Stories,
               <span className="block mt-1" style={{ background: "linear-gradient(90deg, #fbbf24, #f97316, #f59e0b)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
                 One Page
@@ -246,19 +244,10 @@ export default function Studio7Page() {
               </button>
             </div>
 
-            {/* Stats strip */}
-            <div className="flex gap-8 pt-6 justify-center md:justify-start">
-              {[["3,281+", "Books Typeset"], ["720+", "eBooks"], ["182+", "Covers"]].map(([val, lbl]) => (
-                <div key={lbl} className="text-center md:text-left">
-                  <div className="text-2xl font-extrabold" style={{ color: "#fbbf24" }}>{val}</div>
-                  <div className="text-xs text-gray-400 font-medium">{lbl}</div>
-                </div>
-              ))}
-            </div>
           </div>
 
           {/* Right: Image with decorative frame */}
-          <div className="flex-1 flex justify-center items-center mt-8 md:mt-0">
+          <div className="md:col-span-2 w-full flex justify-center items-center mt-8 md:mt-0">
             <div className="relative">
               {/* Amber glow */}
               <div className="absolute inset-0 rounded-3xl blur-3xl" style={{ background: "radial-gradient(circle, rgba(245,158,11,0.25) 0%, transparent 70%)", transform: "scale(1.15)" }} />
@@ -295,10 +284,10 @@ export default function Studio7Page() {
       {/* Stats */}
       <section className="bg-gradient-to-r from-orange-50 to-amber-50 py-16">
         <div className="max-w-5xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-4">
-          <AnimatedStat value={3281} label="Books Typeset" />
-          <AnimatedStat value={720} label="eBooks Produced" />
-          <AnimatedStat value={182} label="Covers Designed" />
-          <AnimatedStat value={700} label="Titles Printed" />
+          <AnimatedStat value={114} label="Books Typeset" />
+          <AnimatedStat value={75} label="eBooks Produced" />
+          <AnimatedStat value={32} label="Covers Designed" />
+          <AnimatedStat value={65} label="Titles Printed" />
         </div>
       </section>
 
@@ -306,7 +295,7 @@ export default function Studio7Page() {
       <section id="services" className="bg-white py-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-extrabold mb-4 bg-gradient-to-r from-orange-600 to-amber-700 bg-clip-text text-transparent">Our Services</h2>
+            <h2 className="text-3xl md:text-5xl font-extrabold mb-4 bg-gradient-to-r from-orange-600 to-amber-700 bg-clip-text text-transparent">Our Services</h2>
             <p className="text-xl text-gray-500 max-w-3xl mx-auto">One source, one environment, one technology — many formats. We develop tools that automate content processing for maximum efficiency.</p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -336,55 +325,66 @@ export default function Studio7Page() {
 
       {/* About */}
       <section id="about" className="bg-gray-50 py-24 text-gray-900">
-        <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
-          <div className="space-y-6">
-            <div className="inline-flex items-center gap-2 bg-orange-100 rounded-full px-4 py-2 text-orange-800 text-sm font-medium">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="mb-8">
+            <div className="inline-flex items-center gap-2 bg-orange-100 rounded-full px-4 py-2 text-orange-800 text-sm font-medium mb-4">
               <FaUsers size={12} /> About Studio7
             </div>
-            <h2 className="text-4xl md:text-5xl font-extrabold leading-tight">
-              A Story of Passion for{" "}
-              <span className="bg-gradient-to-r from-orange-600 to-amber-600 bg-clip-text text-transparent">Books & Publishing</span>
+            <h2 className="text-3xl lg:text-[2.6rem] xl:text-5xl font-extrabold leading-tight lg:whitespace-nowrap">
+              A Story of Passion for <span className="bg-gradient-to-r from-orange-600 to-amber-600 bg-clip-text text-transparent">Books & Publishing</span>
             </h2>
-            <p className="text-gray-600 text-lg leading-relaxed">
-              The history of Studio7 Digital Publishing is a story of passion for books, publishing, and digital innovation. It is built on creativity, continuous learning, and a commitment to excellence, guided by trust and respect for our authors, publishing partners, and clients.
-            </p>
-            <p className="text-gray-600 leading-relaxed">
-              Today, Studio7 collaborates with publishers, authors, and organizations across multiple markets, delivering high-quality publishing, design, content development, and digital publishing solutions. Our experienced team of editors, graphic designers, DTP specialists, publishing consultants, and technology professionals has contributed to a wide range of publishing projects, including books, educational materials, corporate publications, and digital content for clients in India, North America, Europe, and other international markets.
-            </p>
-            <p className="text-gray-600 leading-relaxed">
-              By combining publishing expertise with modern technology, Studio7 helps transform ideas into professionally crafted print and digital publications that reach readers worldwide.
-            </p>
-            <div className="flex flex-wrap gap-4 pt-4">
-              {["Publishers", "Authors", "Educational Institutions", "Corporates"].map((tag) => (
-                <span key={tag} className="bg-white border border-gray-200 rounded-full px-4 py-2 text-sm text-gray-700 font-medium shadow-sm">{tag}</span>
+          </div>
+
+          <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+            <div className="lg:col-span-8 space-y-6 text-justify">
+              <p className="text-gray-600 text-lg leading-relaxed">
+                Studio7 Digital Publishing was founded on a passion for books, content creation, and publishing excellence. Our journey is driven by creativity, innovation, and a commitment to delivering high-quality publishing solutions, built on trust, collaboration, and long-term partnerships.
+              </p>
+              <p className="text-gray-600 leading-relaxed">
+                Today, Studio7 serves publishers, authors, educational institutions, and organizations across global markets, providing publishing, content production, design, and digital publishing services. Our team of experienced publishing professionals, graphic designers, DTP specialists, illustrators, and technology experts has contributed to a wide range of projects, including books, journals, educational content, corporate publications, digital learning materials, infographics, and technical illustrations.
+              </p>
+              <p className="text-gray-600 leading-relaxed">
+                By combining publishing expertise with modern technology, we transform ideas into professionally crafted print and digital publications. Our capabilities span books, magazines, journals, catalogs, annual reports, white papers, eBooks, educational resources, and digital content assets, helping clients streamline workflows, improve efficiency, reduce production costs, and accelerate time-to-market.
+              </p>
+              <p className="text-gray-600 leading-relaxed font-medium">
+                At Studio7, we believe every publication tells a story. Our mission is to help our clients deliver that story with clarity, quality, and impact across print, digital, and accessible formats for audiences worldwide.
+              </p>
+              <div className="flex flex-wrap gap-4 pt-4">
+                {["Publishers", "Authors", "Educational Institutions", "Corporates"].map((tag) => (
+                  <span key={tag} className="bg-white border border-gray-200 rounded-full px-4 py-2 text-sm text-gray-700 font-medium shadow-sm">{tag}</span>
+                ))}
+              </div>
+            </div>
+            <div className="lg:col-span-4 flex flex-col gap-3">
+              {[
+                { icon: <FaBook size={20} className="text-orange-500" />, title: "Publishing Expertise", desc: "20+ years of combined publishing knowledge" },
+                { icon: <FaLayerGroup size={20} className="text-amber-500" />, title: "Multi-Format Output", desc: "Print, EPUB, PDF, interactive eBooks" },
+                { icon: <FaUniversalAccess size={20} className="text-orange-400" />, title: "Accessibility Focus", desc: "WCAG & EPUB accessibility standards" },
+                { icon: <FaGlobe size={20} className="text-amber-400" />, title: "Global Reach", desc: "Clients in India, USA, Europe & beyond" },
+                { icon: <FaAward size={20} className="text-orange-600" />, title: "Quality Standards", desc: "ISO-grade quality assurance processes" },
+                { icon: <FaUsers size={20} className="text-amber-600" />, title: "Expert Team", desc: "Designers, DTP & tech specialists" },
+              ].map((card, i) => (
+                <div key={i} className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-lg transition-all duration-300 flex items-center gap-4 group">
+                  <div className="flex-shrink-0 w-12 h-12 bg-orange-50 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
+                    {card.icon}
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900 text-sm leading-tight">{card.title}</h4>
+                    <p className="text-gray-500 text-xs mt-1 leading-snug">{card.desc}</p>
+                  </div>
+                </div>
               ))}
             </div>
           </div>
-          <div className="grid grid-cols-2 gap-4">
-            {[
-              { icon: <FaBook size={24} className="text-orange-500" />, title: "Publishing Expertise", desc: "20+ years of combined publishing knowledge" },
-              { icon: <FaLayerGroup size={24} className="text-amber-500" />, title: "Multi-Format Output", desc: "Print, EPUB, PDF, interactive eBooks" },
-              { icon: <FaUniversalAccess size={24} className="text-orange-400" />, title: "Accessibility Focus", desc: "WCAG & EPUB accessibility standards" },
-              { icon: <FaGlobe size={24} className="text-amber-400" />, title: "Global Reach", desc: "Clients in India, USA, Europe & beyond" },
-              { icon: <FaAward size={24} className="text-orange-600" />, title: "Quality Standards", desc: "ISO-grade quality assurance processes" },
-              { icon: <FaUsers size={24} className="text-amber-600" />, title: "Expert Team", desc: "Editors, designers, DTP & tech specialists" },
-            ].map((card, i) => (
-              <div key={i} className="bg-white border border-gray-200 rounded-xl p-5 hover:shadow-lg transition-all duration-300">
-                <div className="mb-3">{card.icon}</div>
-                <h4 className="font-semibold text-gray-900 text-sm mb-1">{card.title}</h4>
-                <p className="text-gray-500 text-xs">{card.desc}</p>
-              </div>
-            ))}
-          </div>
         </div>
-      </section>
+      </section >
 
 
       {/* Why Choose Studio7 */}
-      <section className="bg-white py-20">
+      < section className="bg-white py-20" >
         <div className="max-w-5xl mx-auto px-6">
           <div className="text-center mb-14">
-            <h2 className="text-4xl font-extrabold mb-4 bg-gradient-to-r from-orange-600 to-amber-700 bg-clip-text text-transparent">Why Studio7?</h2>
+            <h2 className="text-3xl md:text-4xl font-extrabold mb-4 bg-gradient-to-r from-orange-600 to-amber-700 bg-clip-text text-transparent">Why Studio7?</h2>
             <p className="text-xl text-gray-500">Our philosophy: one source, one environment, one technology — many formats</p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
@@ -406,15 +406,15 @@ export default function Studio7Page() {
             ))}
           </div>
         </div>
-      </section>
+      </section >
 
       {/* Contact */}
-      <section id="contact" className="bg-gradient-to-br from-orange-50 to-amber-50 py-24 text-gray-900">
+      < section id="contact" className="bg-gradient-to-br from-orange-50 to-amber-50 py-24 text-gray-900" >
         <div className="max-w-4xl mx-auto px-6 text-center">
           <div className="inline-flex items-center gap-2 bg-orange-100 rounded-full px-4 py-2 text-orange-800 text-sm font-medium mb-8">
             <FaEnvelope size={12} /> Let's work together
           </div>
-          <h2 className="text-4xl md:text-5xl font-extrabold mb-6">
+          <h2 className="text-3xl md:text-5xl font-extrabold mb-6">
             Ready to publish your
             <span className="block bg-gradient-to-r from-orange-600 to-amber-600 bg-clip-text text-transparent">next great work?</span>
           </h2>
@@ -439,10 +439,10 @@ export default function Studio7Page() {
             </a>
           </div>
         </div>
-      </section>
+      </section >
 
       {/* Footer */}
-      <footer className="bg-gray-100 py-12 text-gray-900 border-t border-gray-200">
+      < footer className="bg-gray-100 py-12 text-gray-900 border-t border-gray-200" >
         <div className="max-w-6xl mx-auto px-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-8">
             <div className="flex items-center gap-3">
@@ -460,14 +460,14 @@ export default function Studio7Page() {
               ))}
             </div>
           </div>
-          <div className="border-t border-gray-300 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-gray-500 text-sm">
-            <p>© 2026 Studio7 Digital Publishing — DigiTran Technologies. All rights reserved.</p>
-            <Link to="/" className="text-orange-700 hover:text-orange-900 transition-colors font-medium">
+          <div className="border-t border-gray-300 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-gray-500 text-sm text-center ">
+            <p>© Studio7 Digital Publishing — DigiTran Technologies. All rights reserved.</p>
+            <Link to="/" className="hidden sm:inline-block text-orange-700 hover:text-orange-900 transition-colors font-medium">
               ← Back to DigiTran Home
             </Link>
           </div>
         </div>
-      </footer>
+      </footer >
 
       <style>{`
         @keyframes marquee {
@@ -478,6 +478,6 @@ export default function Studio7Page() {
           animation: marquee 30s linear infinite;
         }
       `}</style>
-    </div>
+    </div >
   );
 }

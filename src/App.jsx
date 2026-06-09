@@ -270,9 +270,8 @@ const ScrollToTop = () => {
 
   return (
     <button
-      className={`fixed bottom-8 right-8 bg-gradient-to-r from-blue-600 to-purple-600 text-white p-3 rounded-full shadow-lg transition-all duration-300 z-50 hover:scale-110 ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'
-      }`}
+      className={`fixed bottom-8 right-8 bg-gradient-to-r from-blue-600 to-purple-600 text-white p-3 rounded-full shadow-lg transition-all duration-300 z-50 hover:scale-110 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'
+        }`}
       onClick={scrollToTop}
     >
       <FaArrowUp size={20} />
@@ -353,7 +352,7 @@ export default function EnhancedDigiTranApp() {
   return (
     <div className="font-sans bg-white text-gray-900 overflow-x-hidden">
       {/* Custom cursor effect */}
-      <div 
+      <div
         className="fixed w-4 h-4 bg-blue-500 rounded-full pointer-events-none z-50 mix-blend-difference transition-transform duration-150 ease-out"
         style={{
           left: mousePosition.x - 8,
@@ -367,7 +366,7 @@ export default function EnhancedDigiTranApp() {
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-20 relative">
           <button onClick={() => scrollTo('home')} className="flex items-center gap-2 group">
             <Logo />
-            <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent tracking-tight select-none group-hover:scale-105 transition-transform">
+            <span className="text-xl md:text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent tracking-tight select-none group-hover:scale-105 transition-transform">
               DigiTran Technologies
             </span>
           </button>
@@ -376,11 +375,10 @@ export default function EnhancedDigiTranApp() {
               <button
                 key={link.label}
                 onClick={() => scrollTo(link.section)}
-                className={`py-2 px-4 transition-all duration-300 rounded-lg relative overflow-hidden group ${
-                  activeSection === link.section
-                    ? "text-blue-700 font-bold bg-blue-50"
-                    : "hover:text-blue-700 hover:bg-blue-50"
-                }`}
+                className={`py-2 px-4 transition-all duration-300 rounded-lg relative overflow-hidden group ${activeSection === link.section
+                  ? "text-blue-700 font-bold bg-blue-50"
+                  : "hover:text-blue-700 hover:bg-blue-50"
+                  }`}
               >
                 <span className="relative z-10">{link.label}</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left opacity-10"></div>
@@ -432,11 +430,10 @@ export default function EnhancedDigiTranApp() {
                   <button
                     key={link.label}
                     onClick={() => scrollTo(link.section)}
-                    className={`block w-full text-left text-lg py-3 px-4 mb-2 rounded-lg transition-all duration-300 ${
-                      activeSection === link.section
-                        ? "text-blue-700 font-bold bg-blue-50"
-                        : "text-gray-700 hover:text-blue-700 hover:bg-blue-50"
-                    }`}
+                    className={`block w-full text-left text-lg py-3 px-4 mb-2 rounded-lg transition-all duration-300 ${activeSection === link.section
+                      ? "text-blue-700 font-bold bg-blue-50"
+                      : "text-gray-700 hover:text-blue-700 hover:bg-blue-50"
+                      }`}
                     style={{ animationDelay: `${index * 100}ms` }}
                   >
                     {link.label}
@@ -468,8 +465,8 @@ export default function EnhancedDigiTranApp() {
           <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between px-6 gap-12 relative z-10">
             <div className="flex-1 space-y-8">
               <div className="space-y-4">
-                <h1 className="text-5xl md:text-7xl font-extrabold leading-tight">
-                  Transforming 
+                <h1 className="text-3xl md:text-6xl font-extrabold leading-tight">
+                  Transforming
                   <span className="block bg-gradient-to-r from-blue-300 to-purple-300 bg-clip-text text-transparent">
                     Ideas Into Reality
                   </span>
@@ -519,7 +516,7 @@ export default function EnhancedDigiTranApp() {
                 <div className="w-72 h-72 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg rounded-full border border-white/20 flex items-center justify-center shadow-2xl">
                   <div className="grid grid-cols-3 gap-4 p-8">
                     {[FaCode, FaLightbulb, FaRocket, FaShieldAlt, FaBrain, FaCloud].map((Icon, index) => (
-                      <div 
+                      <div
                         key={index}
                         className="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center animate-bounce"
                         style={{ animationDelay: `${index * 200}ms` }}
@@ -538,7 +535,7 @@ export default function EnhancedDigiTranApp() {
         <section className="bg-gray-50 py-20" id="services">
           <div className="max-w-7xl mx-auto px-6">
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              <h2 className="text-3xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                 What We Do
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -577,12 +574,12 @@ export default function EnhancedDigiTranApp() {
             </div>
           </div>
         </section>
-        
+
         {/* Enhanced Industries Section */}
         <section className="bg-white py-20">
           <div className="max-w-6xl mx-auto px-6">
             <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold mb-4 text-gray-900">Industries We Serve</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Industries We Serve</h2>
               <p className="text-xl text-gray-600">Delivering specialized solutions across diverse sectors</p>
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
@@ -606,7 +603,7 @@ export default function EnhancedDigiTranApp() {
         <section className="bg-gray-50 py-20">
           <div className="max-w-6xl mx-auto px-6">
             <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold mb-4 text-gray-900">Our Technology Stack</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Our Technology Stack</h2>
               <p className="text-xl text-gray-600">Cutting-edge tools and frameworks we use to build amazing solutions</p>
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8">
@@ -626,12 +623,12 @@ export default function EnhancedDigiTranApp() {
             </div>
           </div>
         </section>
-        
+
         {/* Work Section */}
         <section className="bg-white py-20" id="work">
           <div className="max-w-7xl mx-auto px-6">
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              <h2 className="text-3xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                 Our Work
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -646,8 +643,8 @@ export default function EnhancedDigiTranApp() {
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
                   <div className="relative overflow-hidden">
-                    <img 
-                      src={work.img} 
+                    <img
+                      src={work.img}
                       alt={work.title}
                       className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
                     />
@@ -668,10 +665,10 @@ export default function EnhancedDigiTranApp() {
                         <span key={idx} className="bg-blue-50 text-blue-700 px-2 py-1 rounded-lg text-xs font-medium">
                           {tech}
                         </span>
-						
+
                       ))}
                     </div>
-					{/*/*<a 
+                    {/*/*<a 
                       href={work.link}
                       className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 font-semibold text-sm group-hover:gap-3 transition-all duration-300"
                     >
@@ -689,7 +686,7 @@ export default function EnhancedDigiTranApp() {
         <section className="bg-gradient-to-br from-blue-50 to-purple-50 py-20" id="testimonials">
           <div className="max-w-6xl mx-auto px-6">
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              <h2 className="text-3xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                 What Our Clients Say
               </h2>
               <p className="text-xl text-gray-600">
@@ -711,8 +708,8 @@ export default function EnhancedDigiTranApp() {
                     </p>
                   </div>
                   <div className="flex items-center gap-4">
-                    <img 
-                      src={testimonial.avatar} 
+                    <img
+                      src={testimonial.avatar}
                       alt={testimonial.name}
                       className="w-12 h-12 rounded-full object-cover border-2 border-blue-200"
                     />
@@ -735,46 +732,17 @@ export default function EnhancedDigiTranApp() {
         {/* About Section */}
         <section className="bg-white py-20" id="about">
           <div className="max-w-6xl mx-auto px-6">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div className="space-y-6">
-                <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            <div className="grid md:grid-cols-2 gap-12 items-center mb-12">
+              <div className="space-y-6 text-justify">
+                <h2 className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent text-left">
                   About DigiTran
                 </h2>
-                <p className="text-xl text-gray-600 leading-relaxed pt-4">
+                <p className="text-lg text-gray-600 leading-relaxed pt-4">
                   We are a passionate team of developers, designers, and innovators dedicated to transforming businesses through cutting-edge technology solutions.
                 </p>
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-lg text-gray-600 leading-relaxed">
                   With over 5 years of experience and 36+ successful projects, we've helped companies across various industries achieve their digital transformation goals. Our expertise spans AI/ML solutions, custom software development, cloud technologies, and modern web and mobile applications.
                 </p>
-                <div className="bg-gradient-to-br from-purple-50 to-blue-50 border border-purple-100 rounded-xl p-5">
-                  <p className="text-gray-700 leading-relaxed text-sm">
-                    <Link
-                      to="/studio7"
-                      className="font-bold text-purple-700 hover:text-purple-900 underline decoration-purple-300 hover:decoration-purple-500 transition-colors"
-                    >
-                      Studio7
-                    </Link>{" "}
-                    is the publishing services division of DigiTran Technologies, providing end-to-end publishing solutions, including editorial support, design, typesetting, eBook production, accessibility compliance, and digital publishing services for publishers, authors, and educational institutions worldwide.
-                  </p>
-                </div>
-                <div className="grid grid-cols-2 gap-6 pt-6">
-                  <div className="text-center p-4 bg-blue-50 rounded-xl">
-                    <div className="text-3xl font-bold text-blue-600 mb-2">5+</div>
-                    <div className="text-sm text-gray-600">Years Experience</div>
-                  </div>
-                  <div className="text-center p-4 bg-purple-50 rounded-xl">
-                    <div className="text-3xl font-bold text-purple-600 mb-2">36+</div>
-                    <div className="text-sm text-gray-600">Projects Delivered</div>
-                  </div>
-                  <div className="text-center p-4 bg-green-50 rounded-xl">
-                    <div className="text-3xl font-bold text-green-600 mb-2">21+</div>
-                    <div className="text-sm text-gray-600">Happy Clients</div>
-                  </div>
-                  <div className="text-center p-4 bg-orange-50 rounded-xl">
-                    <div className="text-3xl font-bold text-orange-600 mb-2">$400,000+</div>
-                    <div className="text-sm text-gray-600">Cost Savings</div>
-                  </div>
-                </div>
               </div>
               <div className="relative">
                 <div className="relative z-10 bg-gradient-to-br from-blue-100 to-purple-100 rounded-2xl p-8">
@@ -804,139 +772,151 @@ export default function EnhancedDigiTranApp() {
                 <div className="absolute -inset-4 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl opacity-10 animate-pulse"></div>
               </div>
             </div>
+
+            <div className="bg-gradient-to-br from-purple-50 to-blue-50 border border-purple-100 rounded-xl p-6 md:p-8 text-center md:text-justify">
+              <p className="text-lg text-gray-700 leading-relaxed">
+                <Link
+                  to="/studio7"
+                  className="font-bold text-orange-500 hover:text-orange-600 transition-colors"
+                >
+                  Studio7
+                </Link>{" "}
+                is the publishing services division of DigiTran Technologies, providing end-to-end publishing solutions, including editorial support, design, typesetting, eBook production, accessibility compliance, and digital publishing services for publishers, authors, and educational institutions worldwide.
+              </p>
+            </div>
           </div>
         </section>
-		
-<section className="bg-gradient-to-br from-blue-900 via-blue-800 to-purple-900 text-white py-20" id="contact">
-  <div className="max-w-6xl mx-auto px-6">
-    <div className="text-center mb-16">
-      <h2 className="text-4xl md:text-5xl font-bold mb-4">
-        Let's Build Something Amazing Together
-      </h2>
-      <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-        Ready to transform your ideas into reality? Get in touch with our team of experts.
-      </p>
-    </div>
-    <div className="grid md:grid-cols-2 gap-12">
-      {/* Contact Info, Socials, Offices */}
-      <div className="space-y-8">
-        {/* Contact Methods */}
-        <div className="space-y-6">
-          <div className="flex items-center gap-4">
-            <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center">
-              <FaEnvelope className="text-white" />
-            </div>
-            <div>
-              <h3 className="font-semibold text-lg">Email Us</h3>
-              <p className="text-blue-200">info@digitranin.com</p>
-            </div>
-          </div>          
-        </div>
-        {/* Socials */}
-        <div className="pt-8">
-          <h3 className="text-xl font-semibold mb-4">Follow Us</h3>
-          <div className="flex gap-4">
-            {socials.map((social, index) => (
-              <a
-                key={index}
-                href={social.url}
-                className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-lg flex items-center justify-center text-white hover:bg-white hover:text-gray-900 transition-all duration-300 hover:scale-110"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {social.icon}
-              </a>
-            ))}
-          </div>
-        </div>
-        {/* Office Cards */}
-        <div className="pt-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
-          {/* India Office */}
-          <div className="bg-white/10 rounded-2xl p-6 flex flex-col items-start shadow-lg border border-white/20">
-            <div className="flex items-center mb-2 gap-2">
-              <FaMapMarkerAlt className="text-green-300 text-xl" />
-              <span className="font-bold text-lg text-green-100">India Office</span>
-            </div>
-            <div className="text-white mb-1 font-semibold">Innovative Minds</div>
-            <div className="text-blue-100 text-sm">Devi Kripa, Manipal - 576104<br />Karnataka, India</div>
-            <div className="mt-2 flex items-center gap-2 text-blue-200">
-              <FaEnvelope className="text-blue-200" />
-              <a href="mailto:info@digitranin.com" className="underline">info@digitranin.com</a>
-            </div>
-          </div>
-          {/* USA Office */}
-          <div className="bg-white/10 rounded-2xl p-6 flex flex-col items-start shadow-lg border border-white/20">
-            <div className="flex items-center mb-2 gap-2">
-              <FaMapMarkerAlt className="text-indigo-300 text-xl" />
-              <span className="font-bold text-lg text-indigo-100">USA Office</span>
-            </div>
-            <div className="text-white mb-1 font-semibold">Innovation Park Drive</div>
-            <div className="text-blue-100 text-sm">Oro Valley, AZ 85755, USA</div>
-            <div className="mt-2 flex items-center gap-2 text-blue-200">
-              <FaEnvelope className="text-blue-200" />
-              <a href="mailto:sales@digitranin.com" className="underline">sales@digitranin.com</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      {/* Contact Form */}
-      <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 relative">
-        <form onSubmit={e => {
-          e.preventDefault();
-          setShowThank(true);
-          e.target.reset();
-          setTimeout(() => setShowThank(false), 2000);
-        }}>
-          <div className="space-y-6">
-            <div className="grid grid-cols-1 gap-4">
-              <input
-                type="text"
-                placeholder="Your Name"
-                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/60 focus:outline-none focus:border-blue-400 transition-colors"
-                required
-                name="name"
-              />
-              <input
-                type="email"
-                placeholder="Your Email"
-                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/60 focus:outline-none focus:border-blue-400 transition-colors"
-                required
-                name="email"
-              />
-            </div>
-            <input
-              type="text"
-              placeholder="Subject"
-              className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/60 focus:outline-none focus:border-blue-400 transition-colors"
-              required
-              name="subject"
-            />
-            <textarea
-              rows="5"
-              placeholder="Your Message"
-              className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/60 focus:outline-none focus:border-blue-400 transition-colors resize-none"
-              required
-              name="message"
-            ></textarea>
-            <button
-              type="submit"
-              className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-lg font-bold hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
-            >
-              Send Message
-            </button>
-          </div>
-        
-            {showThank && (
-              <div className="text-center text-green-400 font-bold pt-4">
-                Thank you! Your message has been sent.
-              </div>
-            )}
 
-        </form>
-      </div>
-    </div>
-  </div>
-</section>
+        <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-purple-900 text-white py-20" id="contact">
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-5xl font-bold mb-4">
+                Let's Build Something Amazing Together
+              </h2>
+              <p className="text-xl text-blue-100 max-w-3xl mx-auto">
+                Ready to transform your ideas into reality? Get in touch with our team of experts.
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 gap-12">
+              {/* Contact Info, Socials, Offices */}
+              <div className="space-y-8">
+                {/* Contact Methods */}
+                <div className="space-y-6">
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center">
+                      <FaEnvelope className="text-white" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-lg">Email Us</h3>
+                      <p className="text-blue-200">info@digitranin.com</p>
+                    </div>
+                  </div>
+                </div>
+                {/* Socials */}
+                <div className="pt-8">
+                  <h3 className="text-xl font-semibold mb-4">Follow Us</h3>
+                  <div className="flex gap-4">
+                    {socials.map((social, index) => (
+                      <a
+                        key={index}
+                        href={social.url}
+                        className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-lg flex items-center justify-center text-white hover:bg-white hover:text-gray-900 transition-all duration-300 hover:scale-110"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {social.icon}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+                {/* Office Cards */}
+                <div className="pt-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  {/* India Office */}
+                  <div className="bg-white/10 rounded-2xl p-6 flex flex-col items-start shadow-lg border border-white/20">
+                    <div className="flex items-center mb-2 gap-2">
+                      <FaMapMarkerAlt className="text-green-300 text-xl" />
+                      <span className="font-bold text-lg text-green-100">India Office</span>
+                    </div>
+                    <div className="text-white mb-1 font-semibold">Innovative Minds</div>
+                    <div className="text-blue-100 text-sm">Devi Kripa, Manipal - 576104<br />Karnataka, India</div>
+                    <div className="mt-2 flex items-center gap-2 text-blue-200">
+                      <FaEnvelope className="text-blue-200" />
+                      <a href="mailto:info@digitranin.com" className="underline">info@digitranin.com</a>
+                    </div>
+                  </div>
+                  {/* USA Office */}
+                  <div className="bg-white/10 rounded-2xl p-6 flex flex-col items-start shadow-lg border border-white/20">
+                    <div className="flex items-center mb-2 gap-2">
+                      <FaMapMarkerAlt className="text-indigo-300 text-xl" />
+                      <span className="font-bold text-lg text-indigo-100">USA Office</span>
+                    </div>
+                    <div className="text-white mb-1 font-semibold">Innovation Park Drive</div>
+                    <div className="text-blue-100 text-sm">Oro Valley, AZ 85755, USA</div>
+                    <div className="mt-2 flex items-center gap-2 text-blue-200">
+                      <FaEnvelope className="text-blue-200" />
+                      <a href="mailto:sales@digitranin.com" className="underline">sales@digitranin.com</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {/* Contact Form */}
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 relative">
+                <form onSubmit={e => {
+                  e.preventDefault();
+                  setShowThank(true);
+                  e.target.reset();
+                  setTimeout(() => setShowThank(false), 2000);
+                }}>
+                  <div className="space-y-6">
+                    <div className="grid grid-cols-1 gap-4">
+                      <input
+                        type="text"
+                        placeholder="Your Name"
+                        className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/60 focus:outline-none focus:border-blue-400 transition-colors"
+                        required
+                        name="name"
+                      />
+                      <input
+                        type="email"
+                        placeholder="Your Email"
+                        className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/60 focus:outline-none focus:border-blue-400 transition-colors"
+                        required
+                        name="email"
+                      />
+                    </div>
+                    <input
+                      type="text"
+                      placeholder="Subject"
+                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/60 focus:outline-none focus:border-blue-400 transition-colors"
+                      required
+                      name="subject"
+                    />
+                    <textarea
+                      rows="5"
+                      placeholder="Your Message"
+                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/60 focus:outline-none focus:border-blue-400 transition-colors resize-none"
+                      required
+                      name="message"
+                    ></textarea>
+                    <button
+                      type="submit"
+                      className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-lg font-bold hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+                    >
+                      Send Message
+                    </button>
+                  </div>
+
+                  {showThank && (
+                    <div className="text-center text-green-400 font-bold pt-4">
+                      Thank you! Your message has been sent.
+                    </div>
+                  )}
+
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* Footer */}
         <footer className="bg-gray-900 text-white py-12">
@@ -992,8 +972,7 @@ export default function EnhancedDigiTranApp() {
               </div>
             </div>
             <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-              <p className="mb-2">&copy; 2026 DigiTran Technologies. All rights reserved. Built with ❤️ by DigiTran Team.</p>
-              <p className="text-sm text-gray-500">Publishing services by{" "}<Link to="/studio7" className="text-orange-400 hover:text-orange-300 font-semibold transition-colors">Studio7 Digital Publishing</Link></p>
+              <p className="mb-2">&copy; DigiTran Technologies. All rights reserved. Built with ❤️ by DigiTran Team.</p>
             </div>
           </div>
         </footer>

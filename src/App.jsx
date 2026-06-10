@@ -415,8 +415,8 @@ export default function EnhancedDigiTranApp() {
                 <div className="flex items-center justify-between mb-8">
                   <div className="flex items-center gap-2">
                     <Logo />
-                    <span className="text-lg font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                      DigiTran
+                    <span className="text-md font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                      DigiTran Technologies
                     </span>
                   </div>
                   <button
@@ -430,7 +430,7 @@ export default function EnhancedDigiTranApp() {
                   <button
                     key={link.label}
                     onClick={() => scrollTo(link.section)}
-                    className={`block w-full text-left text-lg py-3 px-4 mb-2 rounded-lg transition-all duration-300 ${activeSection === link.section
+                    className={`block w-full text-left text-md py-3 px-4 mb-2 rounded-lg transition-all duration-300 ${activeSection === link.section
                       ? "text-blue-700 font-bold bg-blue-50"
                       : "text-gray-700 hover:text-blue-700 hover:bg-blue-50"
                       }`}
@@ -441,7 +441,7 @@ export default function EnhancedDigiTranApp() {
                 ))}
                 <Link
                   to="/studio7"
-                  className="block text-lg py-3 px-4 mb-2 rounded-lg text-orange-700 font-semibold bg-orange-50 hover:bg-orange-100 transition-all duration-300"
+                  className="block text-md py-3 px-4 mb-2 rounded-lg text-orange-700 font-semibold bg-orange-50 hover:bg-orange-100 transition-all duration-300"
                   onClick={() => setSidebarOpen(false)}
                 >
                   Studio7
@@ -535,7 +535,7 @@ export default function EnhancedDigiTranApp() {
         <section className="bg-gray-50 py-20" id="services">
           <div className="max-w-7xl mx-auto px-6">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              <h2 className="text-2xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                 What We Do
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -579,7 +579,9 @@ export default function EnhancedDigiTranApp() {
         <section className="bg-white py-20">
           <div className="max-w-6xl mx-auto px-6">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Industries We Serve</h2>
+              <h2 className="text-2xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                Industries We Serve
+              </h2>
               <p className="text-xl text-gray-600">Delivering specialized solutions across diverse sectors</p>
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
@@ -603,7 +605,9 @@ export default function EnhancedDigiTranApp() {
         <section className="bg-gray-50 py-20">
           <div className="max-w-6xl mx-auto px-6">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Our Technology Stack</h2>
+              <h2 className="text-2xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                Our Technology Stack
+              </h2>
               <p className="text-xl text-gray-600">Cutting-edge tools and frameworks we use to build amazing solutions</p>
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8">
@@ -628,7 +632,7 @@ export default function EnhancedDigiTranApp() {
         <section className="bg-white py-20" id="work">
           <div className="max-w-7xl mx-auto px-6">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              <h2 className="text-2xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                 Our Work
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -686,7 +690,7 @@ export default function EnhancedDigiTranApp() {
         <section className="bg-gradient-to-br from-blue-50 to-purple-50 py-20" id="testimonials">
           <div className="max-w-6xl mx-auto px-6">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              <h2 className="text-2xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                 What Our Clients Say
               </h2>
               <p className="text-xl text-gray-600">
@@ -733,14 +737,14 @@ export default function EnhancedDigiTranApp() {
         <section className="bg-white py-20" id="about">
           <div className="max-w-6xl mx-auto px-6">
             <div className="grid md:grid-cols-2 gap-12 items-center mb-12">
-              <div className="space-y-6 text-justify">
-                <h2 className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent text-left">
+              <div className="space-y-6 text-lg">
+                <h2 className="text-2xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                   About DigiTran
                 </h2>
-                <p className="text-lg text-gray-600 leading-relaxed pt-4">
+                <p className="text-gray-600 leading-relaxed ">
                   We are a passionate team of developers, designers, and innovators dedicated to transforming businesses through cutting-edge technology solutions.
                 </p>
-                <p className="text-lg text-gray-600 leading-relaxed">
+                <p className="text-gray-600 leading-relaxed ">
                   With over 5 years of experience and 36+ successful projects, we've helped companies across various industries achieve their digital transformation goals. Our expertise spans AI/ML solutions, custom software development, cloud technologies, and modern web and mobile applications.
                 </p>
               </div>
@@ -773,7 +777,7 @@ export default function EnhancedDigiTranApp() {
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-purple-50 to-blue-50 border border-purple-100 rounded-xl p-6 md:p-8 text-center md:text-justify">
+            <div className="bg-gradient-to-br from-purple-50 to-blue-50 border border-purple-100 rounded-xl p-6 md:p-8 md:text-justify">
               <p className="text-lg text-gray-700 leading-relaxed">
                 <Link
                   to="/studio7"
@@ -790,7 +794,7 @@ export default function EnhancedDigiTranApp() {
         <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-purple-900 text-white py-20" id="contact">
           <div className="max-w-6xl mx-auto px-6">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-5xl font-bold mb-4">
+              <h2 className="text-2xl md:text-4xl font-bold mb-4">
                 Let's Build Something Amazing Together
               </h2>
               <p className="text-xl text-blue-100 max-w-3xl mx-auto">

@@ -216,12 +216,10 @@ export default function Studio7Page() {
               <span>A DigiTran Technologies Division</span>
             </div>
 
-            <h1 className="text-4xl md:text-6xl xl:text-7xl font-extrabold leading-[1.1] text-white">
-              Crafting Stories,
-              <span className="block mt-1" style={{ background: "linear-gradient(90deg, #fbbf24, #f97316, #f59e0b)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
-                One Page
-              </span>
-              <span className="block text-teal-300">at a Time.</span>
+            <h1 className="text-3xl md:text-6xl xl:text-7xl font-extrabold leading-[1.1] text-white">
+              Crafting Stories,  <span className="block text-teal-300">One Page at a Time.</span>
+
+
             </h1>
 
             <p className="text-lg text-gray-300 max-w-xl leading-relaxed">
@@ -295,7 +293,7 @@ export default function Studio7Page() {
       <section id="services" className="bg-white py-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-extrabold mb-4 bg-gradient-to-r from-orange-600 to-amber-700 bg-clip-text text-transparent">Our Services</h2>
+            <h2 className="text-2xl md:text-4xl font-extrabold mb-4 bg-gradient-to-r from-orange-600 to-amber-700 bg-clip-text text-transparent">Our Services</h2>
             <p className="text-xl text-gray-500 max-w-3xl mx-auto">One source, one environment, one technology — many formats. We develop tools that automate content processing for maximum efficiency.</p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -330,14 +328,14 @@ export default function Studio7Page() {
             <div className="inline-flex items-center gap-2 bg-orange-100 rounded-full px-4 py-2 text-orange-800 text-sm font-medium mb-4">
               <FaUsers size={12} /> About Studio7
             </div>
-            <h2 className="text-3xl lg:text-[2.6rem] xl:text-5xl font-extrabold leading-tight lg:whitespace-nowrap">
+            <h2 className="text-2xl lg:text-[2.4rem] xl:text-4xl font-extrabold leading-tight lg:whitespace-nowrap">
               A Story of Passion for <span className="bg-gradient-to-r from-orange-600 to-amber-600 bg-clip-text text-transparent">Books & Publishing</span>
             </h2>
           </div>
 
           <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-            <div className="lg:col-span-8 space-y-6 text-justify">
-              <p className="text-gray-600 text-lg leading-relaxed">
+            <div className="lg:col-span-8 space-y-6 text-lg">
+              <p className="text-gray-600  leading-relaxed">
                 Studio7 Digital Publishing was founded on a passion for books, content creation, and publishing excellence. Our journey is driven by creativity, innovation, and a commitment to delivering high-quality publishing solutions, built on trust, collaboration, and long-term partnerships.
               </p>
               <p className="text-gray-600 leading-relaxed">
@@ -346,7 +344,7 @@ export default function Studio7Page() {
               <p className="text-gray-600 leading-relaxed">
                 By combining publishing expertise with modern technology, we transform ideas into professionally crafted print and digital publications. Our capabilities span books, magazines, journals, catalogs, annual reports, white papers, eBooks, educational resources, and digital content assets, helping clients streamline workflows, improve efficiency, reduce production costs, and accelerate time-to-market.
               </p>
-              <p className="text-gray-600 leading-relaxed font-medium">
+              <p className="text-gray-600 leading-relaxed ">
                 At Studio7, we believe every publication tells a story. Our mission is to help our clients deliver that story with clarity, quality, and impact across print, digital, and accessible formats for audiences worldwide.
               </p>
               <div className="flex flex-wrap gap-4 pt-4">
@@ -384,7 +382,7 @@ export default function Studio7Page() {
       < section className="bg-white py-20" >
         <div className="max-w-5xl mx-auto px-6">
           <div className="text-center mb-14">
-            <h2 className="text-3xl md:text-4xl font-extrabold mb-4 bg-gradient-to-r from-orange-600 to-amber-700 bg-clip-text text-transparent">Why Studio7?</h2>
+            <h2 className="text-2xl md:text-4xl font-extrabold mb-4 bg-gradient-to-r from-orange-600 to-amber-700 bg-clip-text text-transparent">Why Studio7?</h2>
             <p className="text-xl text-gray-500">Our philosophy: one source, one environment, one technology — many formats</p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
@@ -414,7 +412,7 @@ export default function Studio7Page() {
           <div className="inline-flex items-center gap-2 bg-orange-100 rounded-full px-4 py-2 text-orange-800 text-sm font-medium mb-8">
             <FaEnvelope size={12} /> Let's work together
           </div>
-          <h2 className="text-3xl md:text-5xl font-extrabold mb-6">
+          <h2 className="text-2xl md:text-4xl font-extrabold mb-6">
             Ready to publish your
             <span className="block bg-gradient-to-r from-orange-600 to-amber-600 bg-clip-text text-transparent">next great work?</span>
           </h2>

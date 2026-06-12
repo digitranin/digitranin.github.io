@@ -458,7 +458,7 @@ export default function EnhancedDigiTranApp() {
         </div>
       </nav>
 
-      <main className="pt-2">
+      <main className="pt-8">
         {/* Enhanced Hero Section */}
         <section id="home" className="relative bg-gradient-to-br from-blue-950 via-blue-900 to-purple-900 text-white py-20 md:py-32 overflow-hidden">
           <ParticleBackground />

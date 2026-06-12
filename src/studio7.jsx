@@ -49,6 +49,7 @@ const services = [
     desc: "Professional editing, proofreading, and content development tailored to your publication's voice and audience.",
     features: ["Manuscript Editing", "Copyediting & Proofreading", "Content Development"],
     color: "from-orange-500/20 to-orange-600/10",
+    image: "/service_editorial.png"
   },
   {
     icon: <FaPencilAlt size={36} className="text-amber-500" />,
@@ -56,6 +57,7 @@ const services = [
     desc: "Precision-driven, elegant typesetting and layout for both print and digital formats.",
     features: ["Page Layout & Typesetting", "Cover Design", "Adobe InDesign Workflow"],
     color: "from-amber-500/20 to-amber-600/10",
+    image: "/service_design.png"
   },
   {
     icon: <FaTabletAlt size={36} className="text-orange-400" />,
@@ -63,13 +65,15 @@ const services = [
     desc: "Seamless conversion to EPUB, MOBI, and PDF formats ready for any digital platform worldwide.",
     features: ["EPUB 3 Production", "Fixed & Reflowable Layouts", "Multi-platform Ready"],
     color: "from-orange-400/20 to-orange-500/10",
+    image: "/service_ebook.png"
   },
   {
     icon: <FaUniversalAccess size={36} className="text-amber-400" />,
     title: "Accessibility Compliance",
-    desc: "Making publications inclusive for everyone — WCAG, EPUB Accessibility, and PDF/UA standards.",
+    desc: "Making publications inclusive for everyone - WCAG, EPUB Accessibility, and PDF/UA standards.",
     features: ["WCAG 2.1 Compliance", "Screen Reader Optimized", "EPUB Accessibility"],
     color: "from-amber-400/20 to-amber-500/10",
+    image: "/service_accessibility.png"
   },
   {
     icon: <FaPrint size={36} className="text-orange-500" />,
@@ -77,6 +81,7 @@ const services = [
     desc: "High-quality print-ready file preparation with precision and care for every title.",
     features: ["Print-ready PDFs", "Color Management", "Preflight Checks"],
     color: "from-orange-500/20 to-orange-600/10",
+    image: "/service_typesetting.png"
   },
   {
     icon: <FaGlobe size={36} className="text-amber-300" />,
@@ -84,6 +89,7 @@ const services = [
     desc: "End-to-end digital publishing solutions for publishers, authors, and educational institutions globally.",
     features: ["Digital Distribution", "Interactive eBooks", "Learning Content"],
     color: "from-amber-300/20 to-amber-400/10",
+    image: "/service_digital.png"
   },
 ];
 
@@ -298,8 +304,11 @@ export default function Studio7Page() {
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((svc, i) => (
-              <div key={i} className={`group relative bg-gradient-to-br ${svc.color} border border-gray-100 rounded-2xl p-8 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 overflow-hidden`}>
-                <div className="absolute inset-0 bg-gradient-to-br from-orange-50 to-amber-50 opacity-0 group-hover:opacity-60 transition-opacity duration-500" />
+              <div key={i} className={`group relative bg-white border border-gray-100 rounded-2xl p-8 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 overflow-hidden`}>
+                <div
+                  className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                  style={{ backgroundImage: `url(${svc.image})` }}
+                />
                 <div className="relative z-10">
                   <div className="w-16 h-16 bg-gray-900 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
                     {svc.icon}
@@ -334,18 +343,21 @@ export default function Studio7Page() {
           </div>
 
           <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-            <div className="lg:col-span-8 space-y-6 text-lg">
-              <p className="text-gray-600  leading-relaxed">
+            <div className="lg:col-span-8 space-y-6 text-base">
+              <p className="text-gray-600 leading-relaxed">
                 Studio7 Digital Publishing was founded on a passion for books, content creation, and publishing excellence. Our journey is driven by creativity, innovation, and a commitment to delivering high-quality publishing solutions, built on trust, collaboration, and long-term partnerships.
               </p>
               <p className="text-gray-600 leading-relaxed">
                 Today, Studio7 serves publishers, authors, educational institutions, and organizations across global markets, providing publishing, content production, design, and digital publishing services. Our team of experienced publishing professionals, graphic designers, DTP specialists, illustrators, and technology experts has contributed to a wide range of projects, including books, journals, educational content, corporate publications, digital learning materials, infographics, and technical illustrations.
               </p>
               <p className="text-gray-600 leading-relaxed">
-                By combining publishing expertise with modern technology, we transform ideas into professionally crafted print and digital publications. Our capabilities span books, magazines, journals, catalogs, annual reports, white papers, eBooks, educational resources, and digital content assets, helping clients streamline workflows, improve efficiency, reduce production costs, and accelerate time-to-market.
+                Working with professional publishing software and editorial workflow solutions such as Adobe InDesign, Adobe InCopy, and WoodWing Studio, we enable seamless collaboration between authors, editors, designers, and production teams, helping clients streamline content creation, review, and publishing processes.
               </p>
-              <p className="text-gray-600 leading-relaxed ">
-                At Studio7, we believe every publication tells a story. Our mission is to help our clients deliver that story with clarity, quality, and impact across print, digital, and accessible formats for audiences worldwide.
+              <p className="text-gray-600 leading-relaxed">
+                By combining publishing expertise with modern technology, we transform ideas into professionally crafted print and digital publications. Our capabilities span books, magazines, journals, catalogs, annual reports, white papers, eBooks, educational resources, and digital content assets, helping clients improve efficiency, reduce production costs, and accelerate time-to-market.
+              </p>
+              <p className="text-gray-600 leading-relaxed">
+                At Studio7, we believe every publication tells a story. Our mission is to help clients deliver that story with clarity, quality, and impact across print, digital, and accessible formats for audiences worldwide.
               </p>
               <div className="flex flex-wrap gap-4 pt-4">
                 {["Publishers", "Authors", "Educational Institutions", "Corporates"].map((tag) => (
@@ -459,7 +471,7 @@ export default function Studio7Page() {
             </div>
           </div>
           <div className="border-t border-gray-300 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-gray-500 text-sm text-center ">
-            <p>© Studio7 Digital Publishing — DigiTran Technologies. All rights reserved.</p>
+            <p>© Studio7 Digital Publishing — <br className="md:hidden" />DigiTran Technologies. All rights reserved.</p>
             <Link to="/" className="hidden sm:inline-block text-orange-700 hover:text-orange-900 transition-colors font-medium">
               ← Back to DigiTran Home
             </Link>

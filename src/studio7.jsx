@@ -49,7 +49,7 @@ const services = [
     desc: "Professional editing, proofreading, and content development tailored to your publication's voice and audience.",
     features: ["Manuscript Editing", "Copyediting & Proofreading", "Content Development"],
     color: "from-orange-500/20 to-orange-600/10",
-    image: "/service_editorial.png"
+    image: "/service_editorial.jpg"
   },
   {
     icon: <FaPencilAlt size={36} className="text-amber-500" />,
@@ -57,7 +57,7 @@ const services = [
     desc: "Precision-driven, elegant typesetting and layout for both print and digital formats.",
     features: ["Page Layout & Typesetting", "Cover Design", "Adobe InDesign Workflow"],
     color: "from-amber-500/20 to-amber-600/10",
-    image: "/service_design.png"
+    image: "/service_design.jpg"
   },
   {
     icon: <FaTabletAlt size={36} className="text-orange-400" />,
@@ -65,7 +65,7 @@ const services = [
     desc: "Seamless conversion to EPUB, MOBI, and PDF formats ready for any digital platform worldwide.",
     features: ["EPUB 3 Production", "Fixed & Reflowable Layouts", "Multi-platform Ready"],
     color: "from-orange-400/20 to-orange-500/10",
-    image: "/service_ebook.png"
+    image: "/service_ebook.jpg"
   },
   {
     icon: <FaUniversalAccess size={36} className="text-amber-400" />,
@@ -73,7 +73,7 @@ const services = [
     desc: "Making publications inclusive for everyone - WCAG, EPUB Accessibility, and PDF/UA standards.",
     features: ["WCAG 2.1 Compliance", "Screen Reader Optimized", "EPUB Accessibility"],
     color: "from-amber-400/20 to-amber-500/10",
-    image: "/service_accessibility.png"
+    image: "/service_accessibility.jpg"
   },
   {
     icon: <FaPrint size={36} className="text-orange-500" />,
@@ -81,7 +81,7 @@ const services = [
     desc: "High-quality print-ready file preparation with precision and care for every title.",
     features: ["Print-ready PDFs", "Color Management", "Preflight Checks"],
     color: "from-orange-500/20 to-orange-600/10",
-    image: "/service_typesetting.png"
+    image: "/service_typesetting.jpg"
   },
   {
     icon: <FaGlobe size={36} className="text-amber-300" />,
@@ -89,7 +89,7 @@ const services = [
     desc: "End-to-end digital publishing solutions for publishers, authors, and educational institutions globally.",
     features: ["Digital Distribution", "Interactive eBooks", "Learning Content"],
     color: "from-amber-300/20 to-amber-400/10",
-    image: "/service_digital.png"
+    image: "/service_digital.jpg"
   },
 ];
 
@@ -259,7 +259,7 @@ export default function Studio7Page() {
               <div className="absolute -top-3 -left-3 w-16 h-16 border-t-2 border-l-2 border-teal-400/60 rounded-tl-2xl" />
               <div className="absolute -bottom-3 -right-3 w-16 h-16 border-b-2 border-r-2 border-amber-400/60 rounded-br-2xl" />
               <img
-                src="/studio7_hero.png"
+                src="/studio7_hero.jpg"
                 alt="Studio7 — Publishing Solutions"
                 className="relative z-10 w-full max-w-xs md:max-w-sm lg:max-w-md rounded-2xl shadow-2xl object-cover border border-white/10"
                 style={{ filter: "drop-shadow(0 8px 40px rgba(245,158,11,0.25)) drop-shadow(0 0 80px rgba(20,184,166,0.15))" }}

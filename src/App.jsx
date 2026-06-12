@@ -737,7 +737,7 @@ export default function EnhancedDigiTranApp() {
         <section className="bg-white py-20" id="about">
           <div className="max-w-6xl mx-auto px-6">
             <div className="grid md:grid-cols-2 gap-12 items-center mb-12">
-              <div className="space-y-6 text-lg">
+              <div className="space-y-6 text-base">
                 <h2 className="text-2xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                   About DigiTran
                 </h2>
@@ -778,7 +778,7 @@ export default function EnhancedDigiTranApp() {
             </div>
 
             <div className="bg-gradient-to-br from-purple-50 to-blue-50 border border-purple-100 rounded-xl p-6 md:p-8 md:text-justify">
-              <p className="text-lg text-gray-700 leading-relaxed">
+              <p className="text-base text-gray-700 leading-relaxed">
                 <Link
                   to="/studio7"
                   className="font-bold text-orange-500 hover:text-orange-600 transition-colors"

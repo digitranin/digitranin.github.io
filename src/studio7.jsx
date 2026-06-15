@@ -1,11 +1,114 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import {
   FaBook, FaFileAlt, FaPrint, FaUniversalAccess, FaPencilAlt,
   FaGlobe, FaBars, FaTimes, FaArrowUp, FaEnvelope, FaLinkedin,
   FaTwitter, FaCheckCircle, FaStar, FaLayerGroup, FaTabletAlt,
   FaChevronDown, FaUsers, FaAward, FaMapMarkerAlt
 } from "react-icons/fa";
+
+gsap.registerPlugin(ScrollTrigger);
+
+const marqueeImages = [
+  { src: "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=400&h=280&fit=crop", alt: "Books on shelf" },
+  { src: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=400&h=280&fit=crop", alt: "Open book" },
+  { src: "https://images.unsplash.com/photo-1457369804613-52c61a468e7d?w=400&h=280&fit=crop", alt: "Library" },
+  { src: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400&h=280&fit=crop", alt: "Stack of books" },
+  { src: "https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=400&h=280&fit=crop", alt: "Reading room" },
+  { src: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=400&h=280&fit=crop", alt: "Publishing" },
+  { src: "https://images.unsplash.com/photo-1519682337058-a94d519337bc?w=400&h=280&fit=crop", alt: "Book design" },
+  { src: "https://images.unsplash.com/photo-1455885661740-29cbf08a42fa?w=400&h=280&fit=crop", alt: "Writing" },
+  { src: "https://images.unsplash.com/photo-1509266272358-7701da638078?w=400&h=280&fit=crop", alt: "Digital publishing" },
+  { src: "https://images.unsplash.com/photo-1512820790803-83ca734da794?w=400&h=280&fit=crop", alt: "eBook reader" },
+];
+
+const ImageMarquee = () => {
+  const trackRef = useRef(null);
+  const tweenRef = useRef(null);
+  const [imgWidth, setImgWidth] = useState(340);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const calc = () => {
+      const vw = window.innerWidth;
+      const mobile = vw < 768;
+      setIsMobile(mobile);
+      const count = mobile ? 2 : 4; // Show 2 images on mobile to make them larger
+      const gap = mobile ? 12 : 16;
+      setImgWidth(Math.floor((vw - (count - 1) * gap) / count));
+    };
+    calc();
+    window.addEventListener('resize', calc);
+    return () => window.removeEventListener('resize', calc);
+  }, []);
+
+  useEffect(() => {
+    const track = trackRef.current;
+    if (!track) return;
+    if (tweenRef.current) tweenRef.current.kill();
+    const t = setTimeout(() => {
+      const totalWidth = track.scrollWidth / 2;
+      tweenRef.current = gsap.to(track, {
+        x: -totalWidth,
+        duration: isMobile ? 30 : 45, // Slightly faster on mobile to compensate for smaller width
+        ease: 'none',
+        repeat: -1,
+      });
+    }, 80);
+    return () => {
+      clearTimeout(t);
+      if (tweenRef.current) tweenRef.current.kill();
+    };
+  }, [imgWidth, isMobile]);
+
+  const gap = imgWidth < 300 ? 10 : 14;
+  const imgHeight = Math.round(imgWidth * (isMobile ? 1.4 : 1.15)); // Taller aspect ratio on mobile
+  const doubled = [...marqueeImages, ...marqueeImages];
+
+  return (
+    <div
+      style={{
+        background: '#fff',
+        position: 'relative',
+        zIndex: 10,
+        /* Flat bottom — inverted arch handled by the stats section dome above */
+        borderRadius: '0',
+        marginTop: isMobile ? '-30px' : '-60px',
+        paddingTop: '0px',
+        paddingBottom: '0px',
+        overflow: 'hidden',
+      }}
+    >
+      <div
+        ref={trackRef}
+        style={{ display: 'flex', gap: `${gap}px`, width: 'max-content' }}
+      >
+        {doubled.map((img, i) => (
+          <div
+            key={i}
+            style={{
+              flexShrink: 0,
+              width: `${imgWidth}px`,
+              height: `${imgHeight}px`,
+              borderRadius: '14px',
+              overflow: 'hidden',
+              boxShadow: '0 4px 18px rgba(0,0,0,0.10)',
+            }}
+          >
+            <img
+              src={img.src}
+              alt={img.alt}
+              style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+              loading="lazy"
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
 
 const useCountUp = (target, duration = 2000, start = false) => {
   const [count, setCount] = useState(0);
@@ -138,15 +241,26 @@ export default function Studio7Page() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [showTop, setShowTop] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    handleResize();
+
     const onScroll = () => {
       setScrolled(window.scrollY > 40);
       setShowTop(window.scrollY > 300);
     };
     window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
+    window.addEventListener("resize", handleResize);
+    
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
+
+
 
   const scrollTo = (id) => {
     setMenuOpen(false);
@@ -204,7 +318,15 @@ export default function Studio7Page() {
       </nav>
 
       {/* Hero — unique teal/amber editorial theme */}
-      <section className="relative min-h-screen flex items-center overflow-hidden" style={{ background: "linear-gradient(135deg, #0f2e2e 0%, #0d3d30 40%, #1a2a1a 70%, #0c1f2c 100%)" }}>
+      <section
+        className="relative min-h-screen flex items-center overflow-hidden"
+        style={{
+          background: "linear-gradient(135deg, #0f2e2e 0%, #0d3d30 40%, #1a2a1a 70%, #0c1f2c 100%)",
+          position: "relative",
+          zIndex: 20,
+          borderRadius: `0 0 50% 50% / 0 0 ${isMobile ? 30 : 60}px ${isMobile ? 30 : 60}px`,
+        }}
+      >
         {/* Diagonal decorative strip */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute -top-20 -right-20 w-[600px] h-[600px] rounded-full" style={{ background: "radial-gradient(circle, rgba(245,158,11,0.12) 0%, transparent 70%)" }} />
@@ -269,24 +391,20 @@ export default function Studio7Page() {
         </div>
       </section>
 
-      {/* Scrolling service tags */}
-      <div className="bg-white py-4 overflow-hidden border-y border-gray-100">
-        <div className="flex gap-8 animate-marquee whitespace-nowrap">
-          {["Editorial Support", "Book Design", "DTP & Typesetting", "eBook Production", "EPUB 3", "PDF/UA", "Accessibility", "Cover Design", "Print Production", "Digital Publishing", "Educational Content", "Corporate Publications"].map((tag, i) => (
-            <span key={i} className="text-gray-600 font-semibold text-sm flex items-center gap-2">
-              <FaBook size={10} className="text-orange-500" /> {tag}
-            </span>
-          ))}
-          {["Editorial Support", "Book Design", "DTP & Typesetting", "eBook Production", "EPUB 3", "PDF/UA", "Accessibility", "Cover Design"].map((tag, i) => (
-            <span key={`b${i}`} className="text-gray-600 font-semibold text-sm flex items-center gap-2">
-              <FaBook size={10} className="text-orange-500" /> {tag}
-            </span>
-          ))}
-        </div>
-      </div>
+      {/* Image Marquee strip */}
+      <ImageMarquee />
 
-      {/* Stats */}
-      <section className="bg-gradient-to-r from-orange-50 to-amber-50 py-16">
+      {/* Stats — slides behind marquee bottom arch so inverted-U is visible in orange */}
+      <section
+        className="bg-gradient-to-r from-orange-50 to-amber-50 py-16"
+        style={{
+          position: 'relative',
+          zIndex: 15,
+          borderRadius: `50% 50% 0 0 / ${isMobile ? 30 : 60}px ${isMobile ? 30 : 60}px 0 0`,
+          marginTop: isMobile ? '-30px' : '-60px',
+          paddingTop: isMobile ? '50px' : '80px',
+        }}
+      >
         <div className="max-w-5xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-4">
           <AnimatedStat value={114} label="Books Typeset" />
           <AnimatedStat value={75} label="eBooks Produced" />
@@ -313,11 +431,11 @@ export default function Studio7Page() {
                   <div className="w-16 h-16 bg-gray-900 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
                     {svc.icon}
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">{svc.title}</h3>
-                  <p className="text-gray-600 text-sm leading-relaxed mb-5">{svc.desc}</p>
+                  <h3 className="text-xl font-extrabold text-gray-900 mb-3 drop-shadow-sm">{svc.title}</h3>
+                  <p className="text-gray-800 font-semibold text-sm leading-relaxed mb-5 drop-shadow-sm">{svc.desc}</p>
                   <ul className="space-y-2">
                     {svc.features.map((f, j) => (
-                      <li key={j} className="flex items-center gap-2 text-xs text-gray-500">
+                      <li key={j} className="flex items-center gap-2 text-xs text-gray-700 font-bold">
                         <FaCheckCircle className="text-orange-500 flex-shrink-0" />
                         {f}
                       </li>

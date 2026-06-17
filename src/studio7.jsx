@@ -12,16 +12,16 @@ import {
 gsap.registerPlugin(ScrollTrigger);
 
 const marqueeImages = [
-  { src: "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=400&h=280&fit=crop", alt: "Books on shelf" },
-  { src: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=400&h=280&fit=crop", alt: "Open book" },
-  { src: "https://images.unsplash.com/photo-1457369804613-52c61a468e7d?w=400&h=280&fit=crop", alt: "Library" },
-  { src: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400&h=280&fit=crop", alt: "Stack of books" },
-  { src: "https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=400&h=280&fit=crop", alt: "Reading room" },
-  { src: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=400&h=280&fit=crop", alt: "Publishing" },
-  { src: "https://images.unsplash.com/photo-1519682337058-a94d519337bc?w=400&h=280&fit=crop", alt: "Book design" },
-  { src: "https://images.unsplash.com/photo-1455885661740-29cbf08a42fa?w=400&h=280&fit=crop", alt: "Writing" },
-  { src: "https://images.unsplash.com/photo-1509266272358-7701da638078?w=400&h=280&fit=crop", alt: "Digital publishing" },
-  { src: "https://images.unsplash.com/photo-1512820790803-83ca734da794?w=400&h=280&fit=crop", alt: "eBook reader" },
+  { src: "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=800&q=80", alt: "Books on shelf" },
+  { src: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=800&q=80", alt: "Open book" },
+  { src: "https://images.unsplash.com/photo-1457369804613-52c61a468e7d?w=800&q=80", alt: "Library" },
+  { src: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=800&q=80", alt: "Stack of books" },
+  { src: "https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=800&q=80", alt: "Reading room" },
+  { src: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=800&q=80", alt: "Publishing" },
+  { src: "https://images.unsplash.com/photo-1519682337058-a94d519337bc?w=800&q=80", alt: "Book design" },
+  { src: "https://images.unsplash.com/photo-1455885661740-29cbf08a42fa?w=800&q=80", alt: "Writing" },
+  { src: "https://images.unsplash.com/photo-1509266272358-7701da638078?w=800&q=80", alt: "Digital publishing" },
+  { src: "https://images.unsplash.com/photo-1512820790803-83ca734da794?w=800&q=80", alt: "eBook reader" },
 ];
 
 const ImageMarquee = () => {
@@ -253,7 +253,7 @@ export default function Studio7Page() {
     };
     window.addEventListener("scroll", onScroll);
     window.addEventListener("resize", handleResize);
-    
+
     return () => {
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", handleResize);
@@ -351,7 +351,7 @@ export default function Studio7Page() {
             </h1>
 
             <p className="text-lg text-gray-300 max-w-xl leading-relaxed">
-              From manuscript to market — editorial, typesetting, eBook production, accessibility &amp; digital publishing for publishers worldwide.
+              From manuscript to market — creative services, editorial, publication design, typesetting, accessibility, and print & digital publishing solutions for publishers, agencies, and brands worldwide.
             </p>
 
             <div className="flex flex-wrap gap-3 justify-center md:justify-start pt-2">
@@ -478,7 +478,7 @@ export default function Studio7Page() {
                 At Studio7, we believe every publication tells a story. Our mission is to help clients deliver that story with clarity, quality, and impact across print, digital, and accessible formats for audiences worldwide.
               </p>
               <div className="flex flex-wrap gap-4 pt-4">
-                {["Publishers", "Authors", "Educational Institutions", "Corporates"].map((tag) => (
+                {["Publishers", "Authors", "Design Agency", "Educational Institutions", "Corporates"].map((tag) => (
                   <span key={tag} className="bg-white border border-gray-200 rounded-full px-4 py-2 text-sm text-gray-700 font-medium shadow-sm">{tag}</span>
                 ))}
               </div>
@@ -522,7 +522,7 @@ export default function Studio7Page() {
               { icon: "🔧", title: "Custom Tooling", desc: "We build proprietary tools to automate Adobe InDesign workflows at scale." },
               { icon: "🌐", title: "Multi-Format Output", desc: "From a single source — print PDFs, EPUB 3, accessible PDFs, and more." },
               { icon: "♿", title: "Accessibility First", desc: "We ensure publications are inclusive and compliant with global standards." },
-              { icon: "🤝", title: "Long-term Partnerships", desc: "We build lasting relationships with publishers, not just one-time projects." },
+              { icon: "🤝", title: "Long-term Partnerships", desc: "We build lasting partnerships with publishers, agencies, and brands—not just one-time projects." },
             ].map((item, i) => (
               <div key={i} className="flex gap-4 p-6 bg-gradient-to-br from-orange-50 to-amber-50 rounded-2xl hover:shadow-lg transition-all duration-300">
                 <div className="text-3xl flex-shrink-0">{item.icon}</div>

@@ -12,16 +12,16 @@ import {
 gsap.registerPlugin(ScrollTrigger);
 
 const marqueeImages = [
-  { src: "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=800&q=80", alt: "Books on shelf" },
-  { src: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=800&q=80", alt: "Open book" },
-  { src: "https://images.unsplash.com/photo-1457369804613-52c61a468e7d?w=800&q=80", alt: "Library" },
-  { src: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=800&q=80", alt: "Stack of books" },
-  { src: "https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=800&q=80", alt: "Reading room" },
-  { src: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=800&q=80", alt: "Publishing" },
-  { src: "https://images.unsplash.com/photo-1519682337058-a94d519337bc?w=800&q=80", alt: "Book design" },
-  { src: "https://images.unsplash.com/photo-1455885661740-29cbf08a42fa?w=800&q=80", alt: "Writing" },
-  { src: "https://images.unsplash.com/photo-1509266272358-7701da638078?w=800&q=80", alt: "Digital publishing" },
-  { src: "https://images.unsplash.com/photo-1512820790803-83ca734da794?w=800&q=80", alt: "eBook reader" },
+  { src: "/marquee/marquee_1.jpg", alt: "Books on shelf" },
+  { src: "/marquee/marquee_2.jpg", alt: "Open book" },
+  { src: "/marquee/marquee_3.jpg", alt: "Library" },
+  { src: "/marquee/marquee_4.jpg", alt: "Stack of books" },
+  { src: "/marquee/marquee_5.jpg", alt: "Reading room" },
+  { src: "/marquee/marquee_6.jpg", alt: "Publishing" },
+  { src: "/marquee/marquee_7.jpg", alt: "Book design" },
+  { src: "/marquee/marquee_8.jpg", alt: "Writing" },
+  { src: "/marquee/marquee_9.jpg", alt: "Digital publishing" },
+  { src: "/marquee/marquee_10.jpg", alt: "eBook reader" },
 ];
 
 const ImageMarquee = () => {
